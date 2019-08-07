@@ -8,6 +8,11 @@ import {SharedModule} from "./shared/shared.module";
 import {HomeComponent} from "./pages/home/home.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ValidatorService} from "./core/services/validator.service";
+import {NebularModule} from "./nebular/nebular.module";
+import {HttpClientModule} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {UserService} from "./core/services/user.service";
 
 @NgModule({
   declarations: [
@@ -15,13 +20,18 @@ import {ValidatorService} from "./core/services/validator.service";
     HomeComponent
   ],
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     MaterialModule,
+    NebularModule,
     SharedModule,
   ],
-  providers: [ValidatorService],
+  providers: [ValidatorService, UserService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
