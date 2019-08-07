@@ -6,6 +6,8 @@ import {AppComponent} from './app.component';
 import {MaterialModule} from "./material/material.module";
 import {SharedModule} from "./shared/shared.module";
 import {HomeComponent} from "./pages/home/home.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ValidatorService} from "./core/services/validator.service";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,12 @@ import {HomeComponent} from "./pages/home/home.component";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [ValidatorService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

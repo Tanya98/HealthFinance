@@ -1,4 +1,5 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+@import "style";
 
 * {
   margin: 0;
@@ -7,5 +8,4 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  line-height: 1.42857143;
 }

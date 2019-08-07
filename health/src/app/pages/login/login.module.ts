@@ -3,8 +3,8 @@ import {LoginComponent} from "./login.component";
 import {loginModuleRoutes} from "./login.routing";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
-import {MatFormFieldModule} from "@angular/material";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatButtonModule, MatFormFieldModule, MatInputModule} from "@angular/material";
 
 
 @NgModule({
@@ -14,6 +14,9 @@ import {MatFormFieldModule} from "@angular/material";
     FormsModule,
     loginModuleRoutes,
     MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
   ],
   exports: [LoginComponent],
   declarations: [LoginComponent],

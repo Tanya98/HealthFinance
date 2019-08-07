@@ -1,16 +1,27 @@
 <div class="container">
 
-  <form>
+  <form [formGroup]="form">
     <div class="block-logo">
       <img src="./assets/HF_logo.svg" class="logo">
     </div>
 
-    <div class="example-container">
-    <mat-form-field>
-      <input matInput placeholder="Input">
-    </mat-form-field>
-    </div>
+    <div class="fields-container">
+      <mat-form-field>
+        <input matInput formControlName="email" placeholder="Email">
+      </mat-form-field>
 
+      <mat-form-field>
+        <input matInput formControlName="password" placeholder="Password">
+      </mat-form-field>
+
+    </div>
+    <button mat-button class="but-forgot-password but">forgot password</button>
+
+    <span class="error" *ngIf="form.controls['email'].invalid && form.controls['email'].dirty
+     || form.controls['password'].invalid&&form.controls['password'].dirty">
+      {{form.controls['email'].errors.message}}</span>
+
+    <button class="but-login but" type="submit">login</button>
   </form>
 
 </div>
