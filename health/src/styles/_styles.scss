@@ -1,0 +1,268 @@
+@import 'material';
+@include site-footer-bottom();
+@include bs-alert();
+@include dp-date-picker();
+
+[hidden] {
+  display: none !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.ui-state-active {
+  background-color: #ccc;
+}
+
+.error {
+  color: $danger-color;
+}
+
+.ui-overlaypanel {
+  position: fixed !important;
+  background-color: white;
+  border-radius: $border-radius;
+
+  h5 {
+    font-weight: bold;
+  }
+
+  transition: none !important;
+  opacity: 1 !important;
+}
+
+.ui-selectbutton {
+  border: 2px solid $base-color;
+  border-radius: 20px;
+
+  .ui-button:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .ui-button:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .ui-button {
+    border-left: 1px solid $base-color;
+    border-right: 1px solid $base-color;
+    padding: 0 2px 2px 2px;
+  }
+
+  .ui-button.ui-state-active {
+    color: white;
+    background-color: $base-color;
+  }
+}
+
+.mat-raised-button {
+  background-color: $gray-20;
+
+  &.btn-facebook {
+    color: white;
+    background-color: $btn-facebook-bg-color;
+  }
+
+  &.btn-google {
+    color: white;
+    background-color: $btn-google-bg-color;
+  }
+}
+
+.text-or {
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  display: block;
+  margin: 2em auto;
+
+  > span {
+    position: relative;
+    top: 10px;
+    background-color: white;
+    display: inline-block;
+    padding: 0 10px;
+    text-transform: uppercase;
+    //color: #666;
+  }
+}
+
+legend {
+  text-transform: uppercase;
+  font-size: 1em;
+  //border-bottom-width: 2px;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.wrapper-btn-step-navigate {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.help-description {
+  font-size: 75%;
+  color: $gray-36;
+  line-height: 1;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-danger {
+  color: $danger-text-color !important;
+}
+
+.text-success {
+  color: $accent-text-color !important;
+}
+
+.text-info {
+  color: $base-color !important;
+}
+
+.login {
+  //text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  //top: 20%;
+  //position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.money-input {
+
+  .mat-form-field-infix {
+    display: flex;
+
+    &:after {
+      content: "$";
+      transform: scale(0);
+      transition: transform;
+      order: -1;
+    }
+  }
+
+  &.mat-focused {
+    .mat-form-field-infix {
+      &:after {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+label {
+  color: $gray-56;
+  font-weight: normal;
+}
+
+.label-value {
+  color: $gray-90;
+  display: inline-block;
+}
+
+.colapse-animation {
+  transition: height $material-tab-animation-duration $material-tab-animation-function;
+}
+
+.flex-item-center {
+  align-items: center;
+}
+
+.mat-icon.icon-verified {
+  font-size: 13px;
+  @include square(13px);
+  position: relative;
+  top: 1px;
+
+  &:hover {
+    cursor: default;
+  }
+}
+
+table thead th {
+  font-size: 13px;
+  font-weight: normal;
+  color: $gray-56;
+}
+
+.paid-in-container {
+  $padding-hor: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .and-container {
+    padding: 0 $padding-hor;
+  }
+
+  .lbl {
+    white-space: nowrap;
+    padding: {
+      right: $padding-hor
+    }
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.toolbar {
+  position: absolute;
+  right: 0;
+  top: $grid-gutter-width / 2;
+  z-index: 1;
+}
+
+.mat-card {
+  &.mat-table-wrapper {
+    padding: 0;
+  }
+}
+
+.mat-table-wrapper {
+  .mat-table {
+    box-shadow: none;
+  }
+
+  .mat-paginator {
+    background-color: transparent;
+  }
+}
+
+
+.page {
+  overflow: auto;
+  padding: {
+    left: $page-padding-horisontal;
+    right: $page-padding-horisontal;
+    bottom: 10px;
+    top: 30px;
+  }
+}
+
+.raised-header {
+  + .page {
+    padding-top: $header-height +20px;
+  }
+}
+
+.tab-content {
+  padding: $grid-gutter-width / 2;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

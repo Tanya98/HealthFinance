@@ -1,0 +1,227 @@
+$mat-palette-1: (
+  50 : #e8f5fe,
+  100 : #c5e6fc,
+  200 : #9fd5fa,
+  300 : #78c4f8,
+  400 : #5bb7f7,
+  500 : #3eaaf5,
+  600 : #38a3f4,
+  700 : #3099f2,
+  800 : #2890f0,
+  900 : #1b7fee,
+  A100 : #ffffff,
+  A200 : #eef6ff,
+  A400 : #bbd9ff,
+  A700 : #a1cbff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : $btn-color,
+    600 : #000000,
+    700 : #000000,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$mat-palette-2: (
+  50 : #eefcfa,
+  100 : #d4f8f2,
+  200 : #b8f4e9,
+  300 : #9cefe0,
+  400 : #86ebd9,
+  500 : #71e8d2,
+  600 : #69e5cd,
+  700 : #5ee2c7,
+  800 : #54dec1,
+  900 : #42d8b6,
+  A100 : #ffffff,
+  A200 : #f7fffd,
+  A400 : #c4fff1,
+  A700 : #abffeb,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : $btn-color,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$mat-palette-warn: (
+  50 : #fff1ed,
+  100 : #ffddd2,
+  200 : #ffc6b5,
+  300 : #ffaf97,
+  400 : #ff9e80,
+  500 : #ff8d6a,
+  600 : #ff8562,
+  700 : #ff7a57,
+  800 : #ff704d,
+  900 : #ff5d3c,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffe9e5,
+  A700 : #ffd3cb,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : $btn-color,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$custom-typography: mat-typography-config(
+  //$font-family: $font-family-sans-serif,
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$palette-primary: mat-palette($mat-palette-1);
+$palette-accent: mat-palette($mat-palette-2, 500, 200, 800);
+
+// The warn palette is optional (defaults to red).
+$palette-warn: mat-palette($mat-palette-warn);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$mat-theme: mat-light-theme($palette-primary, $palette-accent, $palette-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($mat-theme);
+@include angular-material-typography($custom-typography);
+
+$list-button: mat-button, mat-raised-button, btn-normal, mat-mini-fab;
+
+body {
+  .mat-fab, .mat-mini-fab, .mat-raised-button {
+    box-shadow: none !important;
+    background-color: $accent-color;
+  }
+
+  @each $btn in $list-button {
+
+    .#{$btn} {
+      &, &:not([disabled]):active {
+        box-shadow: none;
+      }
+
+      //background-color: #71e8d2;
+      &, .mat-button-ripple {
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  //.mat-button, .mat-button .,
+  //.mat-raised-button, .mat-raised-button .mat-button-ripple,
+  //.btn-normal, .btn-normal .mat-button-ripple {
+  //  //border-radius: 20px !important;
+  //
+  //}
+  //@include mat-btn-disabled($list-button)
+}
+
+.btn-normal {
+  background-color: $gray-20;
+}
+
+.btn-normal:disabled {
+  background-color: #ebebeb;
+  color: #dbdbdb;
+}
+
+.btn-red {
+  background-color: $danger-color;
+}
+
+.mat-table {
+  border-radius: $border-radius;
+  border: 1px solid #fff;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+
+  .mat-row:last-child {
+    border: none;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+
+  .mat-cell {
+    font-size: 14px;
+  }
+
+  .mat-header-cell {
+    font-size: 13px;
+  }
+}
+
+.select-table .mat-row:hover {
+  background-color: #fcfcfc;
+  cursor: pointer;
+}
+
+.mat-card {
+  border-radius: $border-radius !important;
+
+  .mat-card-title {
+    font-size: 20px;
+    font-weight: normal;
+  }
+}
+
+.mat-form-field, .mat-select {
+  width: 100%;
+}
+
+.mat-button, .mat-icon-button {
+  &.mat-accent {
+    color: $accent-text-color;
+  }
+}
+
+@include mat-checkbox();
+@include mat-button();
+@include mat-fieldset();
+@include radio-button-group();
+@include mat-list();
+@include mat-tabs-bottom();
+@include mat-list-timeline();
+@include mat-input();
