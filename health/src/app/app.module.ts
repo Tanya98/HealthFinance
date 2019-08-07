@@ -13,11 +13,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserService} from "./core/services/user.service";
+import { SpinerComponent } from './shared/components/spinner/spinner.component';
+import { LoadingService } from './core/services/loading.services';
+import { GlobalService } from './core/services/global.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SpinerComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,7 @@ import {UserService} from "./core/services/user.service";
     NebularModule,
     SharedModule,
   ],
-  providers: [ValidatorService, UserService],
+  providers: [ValidatorService, UserService, LoadingService, GlobalService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

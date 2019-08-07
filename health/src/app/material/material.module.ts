@@ -22,7 +22,8 @@ import {
   MatTableModule,
   MatTabsModule,
   MatTooltipModule,
-  MatFormField, MatFormFieldModule
+  MatFormField,
+  MatFormFieldModule
 } from '@angular/material';
 
 import {CdkTableModule} from "@angular/cdk/table";

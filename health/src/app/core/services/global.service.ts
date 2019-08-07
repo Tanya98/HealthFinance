@@ -35,14 +35,14 @@ export class GlobalService {
     return this.currentUser.role && (this.currentUser.role == Role.Patient);
   }
 
-  public static httpAuthNoCacheOptions(){
-    let httpAuthNoCacheOptions = {
-      headers: new HttpHeaders({'Authorization': 'Bearer ' + ,
-        'Cache-Control': 'no-cache',
-        'Pragma': 'no-cache',
-        'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT'
-      })
-    };
-    // return httpAuthNoCacheOptions;
-  }
+  // public static httpAuthNoCacheOptions(){
+  //   let httpAuthNoCacheOptions = {
+  //     headers: new HttpHeaders({'Authorization': 'Bearer ',
+  //       'Cache-Control': 'no-cache',
+  //       'Pragma': 'no-cache',
+  //       'Expires': 'Sat, 01 Jan 2000 00:00:00 GMT'
+  //     })
+  //   };
+  //   // return httpAuthNoCacheOptions;
+  // }
 }
